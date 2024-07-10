@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form .names {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container form .names input {
+            width: 44%;
+        }
+        .container form input[type="text"],
+        .container form input[type="password"],
+        .container form input[type="email"],
+        .container form input[type="tel"] {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container form .agree_check{
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+        }
+        .container form input[type="checkbox"] {
+            margin: 10px 0;
+        }
+        .container form .agree_check label {
+            white-space: nowrap;
+            margin-left: 5px;
+        }
+        .container form p {
+            font-size: 12px;
+            color: #555;
+            margin: 0 0 0 10px;
+        }
+        .container form .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container form .buttons input[type="submit"],
+        .container form .buttons input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container form .buttons input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .container form .buttons input[type="button"] {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form>
+            <div class="names">
+                <input type="text" id="first-name" placeholder="First Name">
+                <input type="text" id="last-name" placeholder="Last Name">
+            </div>
+            <input type="tel" id="mobile" placeholder="Mobile No.">
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="confirm-password" placeholder="Confirm Password">
+            <div class="agree_check">
+                <input type="checkbox" id="agree">
+                <label for="agree">I Agree</label>
+                <p>By clicking <strong style="background-color: #007bff; border-radius: 3px; color: white; font-size: small;">Register</strong>, you agree to the <a href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.</p>
+            </div>
+            
+            <div class="buttons">
+                <input type="submit" value="Register">
+                <input type="button" value="Sign In">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
