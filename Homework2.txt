@@ -1,0 +1,79 @@
+﻿1. Why are closures useful in JavaScript? Give an example use case.
+Closure can help protect data privacy and also make the repeat calling of function not too expensive.
+Use case:
+function counter() {
+    let count = 0; // count is a private variable
+
+
+    return function() {
+        count += 1;
+        return count;
+    };
+}
+
+
+const counter = counter();
+
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+
+
+
+2. When should you choose to use “let” or “const”
+let: Use let when need a block-scoped variable that can be reassigned.
+const: Use const when need a block-scoped variable that should not be reassigned. But if the const variable is an object or array, the variable can be mutated.
+
+
+3. Give an example of a common mistake related to hoisting and explain how to fix it.
+        Mistake: 
+console.log(x);
+                const x = 5;
+
+
+        Fix:
+                const x = 5;
+                console.log(x);
+        
+4. What will the outcome of each console.log() be after the function calls? Why?
+const arr = [1, 2];
+function foo1(arg) {
+  arg.push(3);
+}
+foo1(arr);
+console.log(arr); 
+//Output [1, 2, 3]
+//Reason: In foo1, arg is a reference to arr and when you push 3, the arr will change. 
+
+
+function foo2(arg) {
+  arg = [1, 2, 3, 4];
+}
+foo2(arr);
+console.log(arr); 
+//Output [1, 2, 3]
+//Reason: When arg = [1, 2, 3, 4], the arg is not the reference to arr but a new variable.
+
+
+function foo3(arg) {
+  let b = arg;
+  b.push(3);
+}
+foo3(arr);
+console.log(arr); 
+//Output [1, 2, 3, 3]
+//Reason: b is a reference to arr and push 3 will change arr.
+
+
+
+
+function foo4(arg) {
+  let b = arg;
+  b = [1, 2, 3, 4];
+}
+foo4(arr);
+console.log(arr); 
+//Output [1, 2, 3, 3]
+//Reason: When let b = arg, b is a reference of arr. But when b = [1, 2, 3, 4], b is a reference to a new variable.
